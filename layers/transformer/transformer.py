@@ -339,6 +339,9 @@ class Transformer(torch.nn.Module):
     ):
         # Simply set src_length_mask to 1 always?
         memory = self.encoder(src, src_length_mask)
+
+        print("printing shape of memory vector")
+        print(memory.shape)
         if self.activate_bottleneck:
             # Mask out everything after the first token
             # print("bottleneck activated ! :D")
